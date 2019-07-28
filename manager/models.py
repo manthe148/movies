@@ -16,6 +16,16 @@ class DeliveryType(models.Model):
     def __str__(self):
         return self.delivered
 
+
+class Rating(models.Model):
+    """ Rating? """
+    rated = models.CharField(max_length = 5)
+    def __str__(self):
+        return self.rated
+
+
+
+
 class Movie(models.Model):
     title = models.CharField(max_length=200)
 
@@ -25,6 +35,8 @@ class Movie(models.Model):
 
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this movie')
     delivery = models.ManyToManyField(DeliveryType, help_text='Select delivery type for this movie')
+
+    rating = models.ManyToManyField(Rating, help_text = 'What is the moved rated?')
 
 
     def __str__(self):
@@ -50,4 +62,6 @@ class Director(models.Model):
 
     def __str__(self):
         return f'{self.last_name},{self.first_name}'
+
+
 

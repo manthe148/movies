@@ -2,6 +2,14 @@
 
 {% block content %}
 
+<h1>Movies!!!!</h1>
+<p>My movie collection includes:</p>
+<ul>
+    <li><strong>Movies:</strong>{{num_movies}}</li>
+    <li><strong>Grenres:</strong>{{num_genre}}</li>
+    <li><strong>Directors:</strong>{{num_directors}}</li>
+</ul>
 
-
+<p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
 {% endblock %}
+

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from manager.models import Movie, Genre, Director, DeliveryType
+from manager.models import Movie, Genre, Director, DeliveryType, Rating
 from django.views import generic
 
 # Create your views here.
@@ -10,11 +10,17 @@ def index(request):
 
     num_movies = Movie.objects.all().count()
     num_directors = Director.objects.all().count()
+    num_genre = Genre.objects.all().count()
 
     context = {
         'num_visits': num_visits,
         'num_movies': num_movies,
         'num_directors': num_directors,
+        'num_genre': num_genre
     }
 
     return render(request, 'index.html', context= context)
+
+
+class MovieListView(generic.ListView):
+    model = Movie
