@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block content %}
+
+<div class="container centered" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h1>Title: {{movie.title}}</h1>
+          <p class="">
+                <p><strong>Director: </strong>{{ movie.director }}</p>
+                <p><strong>Summery: </strong>{{ movie.summery }}</p>
+                <p><strong>Genre:</strong> {% for genre in movie.genre.all %} {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>  
+                <p><strong>Rating:</strong> {% for rating in movie.rating.all %} {{ rating }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>  
+                <p><strong>Platform:</strong> {% for delivery in movie.delivery.all %} {{ delivery }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>  
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+
+
+
+{% endblock %}
+
+

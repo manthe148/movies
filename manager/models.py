@@ -54,14 +54,14 @@ class Director(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
 
-    class Meta:
-        ordering = ['last_name', 'first_name']
+    # class Meta:
+        # ordering = ['first_name', ' last_name']
     
     def get_absolute_url(self):
         return reverse('director_detail', args=[str(self.first_name)])
 
     def __str__(self):
-        return f'{self.last_name},{self.first_name}'
+        return f'{self.first_name} {self.last_name}'
 
 
 

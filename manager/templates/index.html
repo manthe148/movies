@@ -1,15 +1,32 @@
 {% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
 {% block content %}
+<div class="row">
+<div class="col-3">
 
-<h1>Movies!!!!</h1>
-<p>My movie collection includes:</p>
-<ul>
-    <li><strong>Movies:</strong>{{num_movies}}</li>
-    <li><strong>Grenres:</strong>{{num_genre}}</li>
-    <li><strong>Directors:</strong>{{num_directors}}</li>
-</ul>
+</div>
 
+  <div class="jumbotron jumbotron-fluid centered col-6">
+    <div class="container ">
+      <h4 class="display-4">My movie collection includes:</h4>
+      <p class="lead">
+        <ul>
+            <li><strong>Movies:</strong>{{num_movies}}</li>
+            <li><strong>Grenres:</strong>{{num_genre}}</li>
+            <li><strong>Directors:</strong>{{num_directors}}</li>
+        </ul>
+      </p>
+      <button type="button" class="btn btn-primary"><a href="{% url 'movies' %}">Come check them out</a></button>
+    </div>
+  </div>
+  <div class="col-3">
+
+  </div>
+</div>
 <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+
+
 {% endblock %}
 

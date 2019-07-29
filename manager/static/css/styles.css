@@ -1,6 +1,28 @@
+body{
+    text-align: center;
+}
+
+ul{
+    list-style-type: none;
+}
+a{
+    color: black;
+}
+a:button:visited{
+    color: black;
+}
+
 .sidebar-nav {
     margin-top: 20px;
     padding: 0;
     list-style: none;
+}
+
+.centered{
+    text-align: center; 
+    text-overflow: none;  
+}
+.rfloat{
+    float: right;
 }
 
