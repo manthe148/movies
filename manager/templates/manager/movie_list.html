@@ -4,14 +4,19 @@
 
 <h1>Movie list</h1>
 {%if movie_list %}
-<ul class="list-group col-4">
+<div class="d-flex flex-row">
     {% for movie in movie_list %}
     <li class="list-group-item">
-        <a href="{{movie.get_absolute_url }}"  class="list-group-item list-group-item-action active">
-            {{movie.title}}</a> ({{movie.director}}) 
+            <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{movie.image_url}}" alt="Card image cap">
+                    <div class="card-body">
+                            <a href="{{movie.get_absolute_url }}"  class="list-group-item list-group-item-action active">
+                                    {{movie.title}}</a> ({{movie.director}}
+                    </div>
+                  </div>
     </li>
     {% endfor %}
-</ul>
+</div>
 {% else %}
     <p>There are no movies here</p>
 {% endif %}

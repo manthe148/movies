@@ -24,10 +24,9 @@ class Rating(models.Model):
         return self.rated
 
 
-
-
 class Movie(models.Model):
     title = models.CharField(max_length=200)
+    image_url = models.CharField(max_length= 2083, null = False)
 
 # ForeignKey used because a movie can only have one director, but directors can have multipule movies
     director = models.ForeignKey('Director', on_delete=models.SET_NULL, null = True)
@@ -62,6 +61,4 @@ class Director(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
-
-
 
